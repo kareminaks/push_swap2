@@ -64,7 +64,7 @@ void	check_input_numbers_are_not_overflow(int argc, char *argv[])
 	i = 1;
 	while (i < argc)
 	{
-		num = ft_convert_to_int(argv[i]);
+		num = ft_atoi(argv[i]);
 		if (num > 2147483647)
 		{
 			printf("Error\n");
@@ -82,7 +82,7 @@ void	check_input_numbers_are_not_underflow(int argc, char *argv[])
 	i = 1;
 	while (i < argc)
 	{
-		num = ft_convert_to_int(argv[i]);
+		num = ft_atoi(argv[i]);
 		if (num < -2147483648)
 		{
 			printf("Error\n");

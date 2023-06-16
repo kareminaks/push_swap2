@@ -7,8 +7,22 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-%.o: %.c $(HEADER)
-	cc $(CFLAGS) -c -o $@ $(HEADER) $<
+libft/libft.a:
+	make -C libft
 
-$(NAME): $(OBJ) $(HEADER)
-	cc -o $(NAME) $(OBJ) $(HEADER)
+%.o: %.c $(HEADER)
+	cc $(CFLAGS) -Ilibft -c -o $@ $(HEADER) $<
+
+$(NAME): $(OBJ) $(HEADER) libft/libft.a
+	cc -o $(NAME) $(OBJ) $(HEADER) libft/libft.a
+
+clean:
+	rm -f $(OBJ)
+	make -C libft clean
+
+fclean: clean
+	rm -f $(NAME)
+	make -C libft fclean
+
+
+re: fclean all
