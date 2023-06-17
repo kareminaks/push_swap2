@@ -9,8 +9,9 @@ void sortlist_a(list_t * list_a, list_t * list_b, int depth)
 		return;
 	}
 	median = get_median(list_a, depth);
-	printf("median: %d\n", median);
+	// printf("median: %d\n", median);
 	int n  = push_small_tob(list_a, list_b, median, depth);
+	// printf("rra_n: limit=%d\n",depth-n);
 	rra_n(list_a, depth-n);
 	sortlist_a(list_a, list_b, depth-n);
 	sortlist_b(list_b, list_a, n);
@@ -27,7 +28,7 @@ void sortlist_b(list_t * list_b, list_t * list_a, int depth)
 	}
 	median = get_median(list_b, depth);
 	int n  = push_big_toa(list_b, list_a, median, depth);
-	rrb_n(list_a, depth-n);
+	rrb_n(list_b, depth-n);
 	sortlist_a(list_a, list_b, n);
 	sortlist_b(list_b, list_a, depth-n);
 	pb_n(list_b, list_a, n);
@@ -51,12 +52,10 @@ int push_big_toa(list_t*list_b, list_t* list_a, int median, int depth)
 {
     int moved=0;
     int i=0;
-    node_t* ptr = list_b->head;
 
     while (i<depth)
     {
-		ptr = list_b->head;
-        if (ptr->val > median)
+        if (list_b->head->val > median)
         {
             pa(list_a, list_b,1);
             moved++;

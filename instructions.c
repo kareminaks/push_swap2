@@ -129,6 +129,11 @@ void pa(list_t* list_a, list_t* list_b, int print)
     node_t* head = pop_head(list_b);
     if (!head) return;
     push_head(list_a, head);
+
+    // printf("a after:\n");
+    // print_list(list_a);
+    // printf("b after:\n");
+    // print_list(list_b);
 }
 
 //pb (push b): Take the first element at the top of a and put it at the top of b.
@@ -145,6 +150,10 @@ void pb(list_t* list_b, list_t* list_a, int print)
     node_t* head = pop_head(list_a);
     if (!head) return;
     push_head(list_b, head);
+    // printf("a before:\n");
+    // print_list(list_a);
+    // printf("b before:\n");
+    // print_list(list_b);
 }
 
 //ra (rotate a): Shift up all elements of stack a by 1.
