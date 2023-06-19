@@ -39,7 +39,7 @@ void    pa(list_t* list_a, list_t* list_b, int print);
 void    pb(list_t* list_a, list_t* list_b, int print);
 void    ra(list_t* list_a, int print);
 void    rb(list_t* list_a, int print);
-void    r(list_t* list_a, list_t *list_b, int print);
+void    rr(list_t* list_a, list_t *list_b, int print);
 void    rra(list_t* list_a, int print);
 void    rrb(list_t* list_b, int print);
 void    rrr(list_t* list_a, list_t *list_b, int print); 
