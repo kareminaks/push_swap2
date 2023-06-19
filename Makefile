@@ -8,20 +8,21 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 libft/libft.a:
-	make -C libft libft.a
+	make -C libft
 
 %.o: %.c $(HEADER)
-	cc -I. -Ilibft -c $(CFLAGS) -c -o $@ $(HEADER) $<
+	cc $(CFLAGS) -Ilibft -c -o $@ $(HEADER) $<
 
 $(NAME): $(OBJ) $(HEADER) libft/libft.a
-	cc -o $(NAME) $(OBJ) libft/libft.a $(HEADER)
+	cc -o $(NAME) $(OBJ) $(HEADER) libft/libft.a
 
 clean:
-	make -C libft clean
 	rm -f $(OBJ)
+	make -C libft clean
 
 fclean: clean
-	make -C libft fclean
 	rm -f $(NAME)
+	make -C libft fclean
+
 
 re: fclean all

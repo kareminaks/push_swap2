@@ -5,6 +5,7 @@
 # include<stdlib.h>
 # include<ctype.h>
 # include<limits.h>
+# include "libft.h"
 
 
 // node creation
@@ -48,5 +49,18 @@ node_t* pop_tail(list_t*list);
 void    push_head(list_t* list, node_t* node);
 void    push_tail(list_t* list, node_t* node);
 
+void sortlist_a(list_t * list_a, list_t * list_b, int depth);
+void sortlist_b(list_t * list_b, list_t * list_a, int depth);
+int get_median(list_t * list, int depth);
+int push_big_toa(list_t*list_a, list_t* list_b, int median, int depth);
+int push_small_tob(list_t*list_a, list_t* list_b, int median, int depth);
+void smallsort_a(list_t *list_a, int depth);
+void smallsort_b(list_t *list_b, int depth);
+void rra_n(list_t* list_a, int n);
+void rrb_n(list_t* list_b, int n);
+void pa_n(list_t * list_a, list_t * list_b, int n);
+void pb_n(list_t * list_b, list_t * list_a, int n);
+
+void print_list( list_t * list);
 
 #endif
