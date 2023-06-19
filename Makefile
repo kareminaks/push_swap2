@@ -2,7 +2,7 @@ DEFAULT_GOAL := all
 
 NAME = push_swap
 CFLAGS = -Wall -Werror -Wextra
-SRC = main.c check_input.c error_management.c instructions.c node_list_helper_func.c
+SRC = main.c check_input.c error_management.c instructions.c node_list_helper_func.c command_optimization.c sorting.c
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
