@@ -64,13 +64,14 @@ void optimize_commands(list_t *command_list, list_t* optimized_list)
 	{
         if(check_command_cancel(command_list->head->val, optimized_list->tail->val)==1)
         {
-            pop_tail(optimized_list);
-            pop_head(command_list);
+            free(pop_tail(optimized_list));
+            free(pop_head(command_list));
         }
         else if (check_command_replace(command_list->head->val, optimized_list->tail->val)!=0)
         {
             node_t* head = pop_head(command_list);
             optimized_list->tail->val = check_command_replace(head->val, optimized_list->tail->val);
+            free(head);
         }
         else {
             node_t* node =pop_head(command_list);

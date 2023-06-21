@@ -10,6 +10,9 @@ SRCS 			=	ft_isalnum.c    ft_isprint.c   ft_memcmp.c \
 					ft_itoa.c       ft_strmapi.c   ft_striteri.c \
 					ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 					ft_putnbr_fd.c  ft_lstclear.c\
+					ft_printf.c     numlen.c \
+	  				print_4bytes.c 	print_8bytes.c put_ll.c \
+	  				put_ptr.c      	put_unsint.c \
 
 OBJS			= $(SRCS:.c=.o)
 

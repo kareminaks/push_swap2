@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kkaremin <kkaremin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/21 17:15:55 by kkaremin          #+#    #+#             */
+/*   Updated: 2023/06/21 17:33:09 by kkaremin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -6,7 +18,6 @@
 # include<ctype.h>
 # include<limits.h>
 # include "libft.h"
-
 
 // node creation
 typedef struct node {
@@ -43,7 +54,7 @@ void    r(list_t* list_a, list_t *list_b, int print,list_t *command_list);
 void    rra(list_t* list_a, int print,list_t *command_list);
 void    rrb(list_t* list_b, int print,list_t *command_list);
 void    rrr(list_t* list_a, list_t *list_b, int print,list_t *command_list); 
->>>>>>> c4cc9018b4cd9b5b9d38a6f0207ca6a1308300c0
+
    
 node_t* pop_head(list_t* list);
 node_t* pop_tail(list_t*list);
@@ -53,12 +64,12 @@ void    push_tail(list_t* list, node_t* node);
 void sortlist_a(list_t * list_a, list_t * list_b, int depth,list_t *command_list);
 void sortlist_b(list_t * list_b, list_t * list_a, int depth,list_t *command_list);
 int get_median(list_t * list, int depth);
-int push_big_toa(list_t*list_a, list_t* list_b, int median, int depth,list_t *command_list);
-int push_small_tob(list_t*list_a, list_t* list_b, int median, int depth,list_t *command_list);
+int push_big_toa(list_t*list_a, list_t* list_b, int depth,list_t *command_list);
+int push_small_tob(list_t*list_a, list_t* list_b, int depth,list_t *command_list);
 void smallsort_a(list_t *list_a, int depth,list_t *command_list);
 void smallsort_b(list_t *list_b, int depth,list_t *command_list);
-void rra_n(list_t* list_a, int n,list_t *command_list);
-void rrb_n(list_t* list_b, int n,list_t *command_list);
+void rra_n(list_t* list_a,int length, int n,list_t *command_list);
+void rrb_n(list_t* list_b,int length, int n,list_t *command_list);
 void pa_n(list_t * list_a, list_t * list_b, int n,list_t *command_list);
 void pb_n(list_t * list_b, list_t * list_a, int n,list_t *command_list);
 
@@ -67,6 +78,15 @@ void put_command_in_list(int command, list_t * command_list);
 void optimize_commands(list_t *command_list, list_t* optimized_list);
 int check_command_replace(int a, int b);
 void put_command_in_list(int command, list_t *command_list);
+int get_list_length(list_t* list);
+void choose_algo(list_t * list_a, list_t * list_b, list_t *command_list);
+void	small_sort_3(list_t *list_a, list_t *command_list);
+void	swap(int *a, int *b);
+void	bubble_sort(int *arr, int len);
+int     true_median(list_t *list_a);
+void	small_sort_5(list_t *list_a, list_t *list_b, list_t *command_list);
+int	list_is_sorted(list_t *list_a);
+void	print_instruction(int instruction);
 
 #define SA 1
 #define SB 2
