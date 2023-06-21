@@ -6,7 +6,7 @@
 #    By: kkaremin <kkaremin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/21 17:22:56 by kkaremin          #+#    #+#              #
-#    Updated: 2023/06/21 17:22:57 by kkaremin         ###   ########.fr        #
+#    Updated: 2023/06/21 19:41:00 by kkaremin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ DEFAULT_GOAL := all
 
 NAME = push_swap
 CFLAGS = -Wall -Werror -Wextra
-SRC = main.c check_input.c error_management.c instructions.c node_list_helper_func.c command_optimization.c sorting.c sorting_more.c small_sorting.c
+SRC = main.c check_input.c error_management.c instructions_1.c instructions_2.c instructions_3.c \
+ node_list_helper_func.c command_optimization.c sorting.c sorting_more.c small_sorting.c
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)

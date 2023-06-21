@@ -6,7 +6,7 @@
 /*   By: kkaremin <kkaremin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 17:15:45 by kkaremin          #+#    #+#             */
-/*   Updated: 2023/06/21 17:23:19 by kkaremin         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:36:16 by kkaremin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ node_t	*new_node(int value)
 //creates new list
 list_t	new_list(void)
 {
-	list_t res;
+	list_t	res;
 
 	res.head = 0;
 	res.tail = 0;
@@ -71,4 +71,13 @@ void	rrb_n(list_t *list_b, int length, int n, list_t *command_list)
 			i++;
 		}
 	}
+}
+
+//rrr : rra and rrb at the same time
+void	rrr(list_t *list_a, list_t *list_b, int print, list_t *command_list)
+{
+	if (print)
+		put_command_in_list(RRR, command_list);
+	rra(list_a, 0, command_list);
+	rrb(list_b, 0, command_list);
 }

@@ -6,7 +6,7 @@
 /*   By: kkaremin <kkaremin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 17:39:14 by kkaremin          #+#    #+#             */
-/*   Updated: 2023/06/21 17:40:01 by kkaremin         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:35:36 by kkaremin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,4 @@ void	rrb(list_t *list_b, int print, list_t *command_list)
 		return ;
 	push_head(list_b, tail);
 }
-//rrr : rra and rrb at the same time
-void	rrr(list_t *list_a, list_t *list_b, int print, list_t *command_list)
-{
-	if (print)
-		put_command_in_list(RRR, command_list);
-	rra(list_a, 0, command_list);
-	rrb(list_b, 0, command_list);
-}
+

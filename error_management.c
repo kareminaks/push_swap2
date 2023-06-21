@@ -20,7 +20,7 @@ void	check_input_numbers_are_not_duplicated(int argc, char **argv)
 		{
 			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
 			{
-				printf("Error\n");
+				ft_printf("Error\n");
 				exit(1);
 			}
 			j++;
@@ -47,7 +47,7 @@ void	check_input_numbers_are_integers(int argc, char *argv[])
 			}
 			if (!ft_isdigit(argv[i][j]))
 			{
-				printf("Error\n");
+				ft_printf("Error\n");
 				exit(1);
 			}
 			j++;
@@ -67,7 +67,7 @@ void	check_input_numbers_are_not_overflow(int argc, char *argv[])
 		num = ft_atoi(argv[i]);
 		if (num > 2147483647)
 		{
-			printf("Error\n");
+			ft_printf("Error\n");
 			exit(1);
 		}
 		i++;
@@ -85,7 +85,7 @@ void	check_input_numbers_are_not_underflow(int argc, char *argv[])
 		num = ft_atoi(argv[i]);
 		if (num < -2147483648)
 		{
-			printf("Error\n");
+			ft_printf("Error\n");
 			exit(1);
 		}
 		i++;

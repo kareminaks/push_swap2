@@ -6,7 +6,7 @@
 /*   By: kkaremin <kkaremin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 17:22:48 by kkaremin          #+#    #+#             */
-/*   Updated: 2023/06/21 17:31:53 by kkaremin         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:53:20 by kkaremin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	choose_algo(list_t *list_a, list_t *list_b, list_t *command_list)
 {
 	int	l;
 
-	l = get_list_length;
+	l = get_list_length(list_a);
 	if (list_is_sorted(list_a))
 		return ;
 	if (l == 3)
@@ -61,7 +61,7 @@ void	choose_algo(list_t *list_a, list_t *list_b, list_t *command_list)
 	else if (l == 5)
 		small_sort_5(list_a, list_b, command_list);
 	else
-		sortlist_a(&list_a, &list_b, l, &command_list);
+		sortlist_a(list_a, list_b, l, command_list);
 }
 
 void	print_instruction(int instruction)
@@ -97,7 +97,7 @@ void	print_list(list_t *list)
 
 	if (list->head == 0)
 		return ;
-	ptr = list->head;
+	ptr = list->head->next;
 	while (ptr != 0)
 	{
 		print_instruction(ptr->val);

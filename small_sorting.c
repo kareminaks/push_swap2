@@ -6,7 +6,7 @@
 /*   By: kkaremin <kkaremin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 16:50:49 by kkaremin          #+#    #+#             */
-/*   Updated: 2023/06/21 17:16:51 by kkaremin         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:48:42 by kkaremin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,25 @@ void	small_sort_3(list_t *list_a, list_t *command_list)
 	int	a;
 	int	b;
 	int	c;
-	int	len;
 
 	a = list_a->head->val;
 	b = list_a->head->next->val;
 	c = list_a->tail->val;
 	if ((a < b) && (b > c) && (a < c))
 	{
-		sa(list_a, 1, &command_list);
-		ra(list_a, 1, &command_list);
+		sa(list_a, 1, command_list);
+		ra(list_a, 1, command_list);
 	}
 	else if ((a > b) && (b < c) && (a < c))
-		sa(list_a, 1, &command_list);
+		sa(list_a, 1, command_list);
 	else if ((a < b) && (b > c) && (a > c))
-		rra(list_a, 1, &command_list);
+		rra(list_a, 1, command_list);
 	else if ((a > b) && (b < c) && (a > c))
-		ra(list_a, 1, &command_list);
+		ra(list_a, 1, command_list);
 	else if ((a > b) && (b > c) && (a > c))
 	{
-		ra(list_a, 1, &command_list);
-		sa(list_a, 1, &command_list);
+		ra(list_a, 1, command_list);
+		sa(list_a, 1, command_list);
 	}
 }
 
@@ -61,7 +60,7 @@ void	bubble_sort(int *arr, int len)
 		while (j < len - 1)
 		{
 			if (arr[j] > arr[j + 1])
-				swap(&arr[i], &arr[j]);
+				swap(&arr[j], &arr[j + 1]);
 			j++;
 		}
 		i++;
@@ -76,7 +75,7 @@ int	true_median(list_t *list_a)
 	int		i;
 	int		median;
 
-	len = get_list_length(list);
+	len = get_list_length(list_a);
 	arr = calloc(len, sizeof(int));
 	list = list_a->head;
 	i = 0;
@@ -112,5 +111,5 @@ void	small_sort_5(list_t *list_a, list_t *list_b, list_t *command_list)
 	moved = depth / 2;
 	small_sort_3(list_a, command_list);
 	smallsort_b(list_b, 2, command_list);
-	pa(list_a, list_b, 1, command_list);
+	pa_n(list_a, list_b, 2, command_list);
 }
